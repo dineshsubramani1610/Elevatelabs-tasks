@@ -1,0 +1,21 @@
+🔐 SPF (Sender Policy Framework)
+
+Checks whether the mail server sending the email is authorized by the domain owner.
+
+If the email claims to come from shipping-alerts.info but the server isn’t on the allowed list, SPF will fail.
+
+✉️ DKIM (DomainKeys Identified Mail)
+
+Adds a cryptographic signature to emails so the receiver can verify that:
+
+The email truly came from the claimed domain, and
+
+The content wasn’t altered in transit.
+Phishing emails often lack a valid DKIM signature.
+
+📘 DMARC (Domain-based Message Authentication, Reporting & Conformance)
+
+Uses both SPF and DKIM results to decide what to do with suspicious emails:
+
+Reject, quarantine, or allow them.
+Legitimate domains configure DMARC to prevent spoofing; phishing domains often don’t.
